@@ -1,0 +1,14 @@
+import os
+import xai_sdk
+
+client = xai_sdk.Client(api_key=os.getenv("XAI_API_KEY"))
+
+response = client.video.generate(
+    prompt="A glowing crystal-powered rocket launching from the red dunes of Mars, ancient alien ruins lighting up in the background as it soars into a sky full of unfamiliar constellations",
+    model="grok-imagine-video",
+    duration=10,
+    aspect_ratio="16:9",
+    resolution="720p",
+)
+
+print(response.url)
